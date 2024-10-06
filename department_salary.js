@@ -134,5 +134,22 @@ const company = {
       const totalSalaryEngineering = calculateDepartmentSalary(engineeringDepartment);
       console.log(`Total Salary for Engineering department: $${totalSalaryEngineering}`);
       //Create recursive function to calculate department salary
+
+      // Task 3 - Create a Function to Calculate the Total Salary for All Departments
+      function calculateCompanySalary(company) {
+        let totalCompanySalary = 0;
+    
+        // Iterate over each department in the company
+        for (let department of company.departments) {
+            totalCompanySalary += calculateDepartmentSalary(department);  // Sum each department's total salary
+        }
+    
+        return totalCompanySalary;  // Return the total salary for the company
+    }
+// Example
+const totalCompanySalary = calculateCompanySalary(company);
+console.log(`Total Salary for the entire company: $${totalCompanySalary}`);
+//Calculate total salary for all departments in the company
+
       
     
